@@ -2,48 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GitHub Image Viewer</title>
+  <title>My GitHub Images</title>
   <style>
     body { font-family: sans-serif; padding: 20px; }
-    img { max-width: 200px; margin: 10px; }
-    input[type="text"] { width: 100%; margin-top: 10px; }
+    .img-box { display: inline-block; margin: 10px; text-align: center; }
+    img { max-width: 200px; border: 1px solid #ccc; border-radius: 8px; }
+    code { display: block; margin-top: 5px; font-size: 12px; background: #f0f0f0; padding: 4px; border-radius: 4px; }
   </style>
 </head>
 <body>
-  <h1>📦 GitHub Image Viewer</h1>
-  <p>Paste your GitHub username, repo, and folder path below:</p>
-
-  <label>GitHub Username: <input type="text" id="user" value="your-username"></label><br>
-  <label>Repo Name: <input type="text" id="repo" value="your-repo"></label><br>
-  <label>Folder Path (optional): <input type="text" id="folder" value="images/"></label><br>
-  <button onclick="loadImages()">Load Images</button>
-
-  <div id="gallery"></div>
-
-  <script>
-    async function loadImages() {
-      const user = document.getElementById("user").value;
-      const repo = document.getElementById("repo").value;
-      const folder = document.getElementById("folder").value;
-
-      const apiUrl = `https://api.github.com/repos/${user}/${repo}/contents/${folder}`;
-      const res = await fetch(apiUrl);
-      const files = await res.json();
-
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = "<h2>🖼️ Images:</h2>";
-
-      files.forEach(file => {
-        if (file.name.match(/\.(png|jpe?g|gif)$/i)) {
-          const rawUrl = `https://raw.githubusercontent.com/${user}/${repo}/main/${folder}${file.name}`;
-          gallery.innerHTML += `
-            <div>
-              <img src="${rawUrl}" alt="${file.name}"><br>
-              <code>${rawUrl}</code>
-            </div>`;
-        }
-      });
-    }
-  </script>
+  <h1>📦 My Hosted Images</h1>
+  <div class="gallery">
+    <!-- Replace these with your actual image filenames -->
+    <div class="img-box">
+      <img src="images/image1.png" alt="image1">
+      <code>images/image1.png</code>
+    </div>
+    <div class="img-box">
+      <img src="images/image2.jpg" alt="image2">
+      <code>images/image2.jpg</code>
+    </div>
+    <!-- Add more here -->
+  </div>
 </body>
 </html>
