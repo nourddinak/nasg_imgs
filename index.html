@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader to Google Drive</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Uploader to Google Drive</h1>
+        </header>
+        
+        <section class="upload-section">
+            <div class="auth-section">
+                <button id="authorize-button" class="button">Sign In with Google</button>
+                <button id="signout-button" class="button" style="display: none;">Sign Out</button>
+            </div>
+            
+            <div id="upload-container" style="display: none;">
+                <h2>Upload Image</h2>
+                <div class="upload-area" id="drop-area">
+                    <p>Drag & drop images here or</p>
+                    <input type="file" id="file-input" accept="image/*" multiple>
+                    <label for="file-input" class="button">Select Files</label>
+                </div>
+                <div class="progress-container" id="progress-container" style="display: none;">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <button id="upload-button" class="button button-primary">Upload to Google Drive</button>
+            </div>
+        </section>
+        
+        <section class="gallery-section" id="gallery-section">
+            <h2>Your Images</h2>
+            <div class="gallery" id="image-gallery">
+                <!-- Images will be displayed here -->
+                <p id="no-images-message">Sign in to view your images</p>
+            </div>
+        </section>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
