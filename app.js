@@ -1,9 +1,9 @@
 // Client ID from the Google API Console
-const CLIENT_ID = '822294311071-t9gbejt6htl7imrq6untbg8s3p7qgfhs.apps.googleusercontent.com';
+const CLIENT_ID = '';
 // API key from the Google API Console
-const API_KEY = 'AIzaSyBjxB1qId-aY1KgPD09vqJerXtopnrbb_8';
+const API_KEY = '';
 // Discovery document URL for Google Drive API v3
-const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+const DISCOVERY_DOC = '';
 // Authorization scopes required for the Google Drive API
 const SCOPES = 'https://www.googleapis.com/auth/drive.file';
 
